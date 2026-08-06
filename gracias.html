@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por contactarnos! - DyM Cyber</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #003366;
+            --secondary-blue: #1a5490;
+            --accent-red: #dc143c;
+            --light-blue: #4a90e2;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .thank-you-container {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 60px 40px;
+            text-align: center;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .check-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            animation: scaleIn 0.5s ease-out 0.3s backwards;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .check-icon::after {
+            content: '✓';
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeIn 0.8s ease-out 0.4s backwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        p {
+            color: var(--dark-gray);
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            animation: fadeIn 0.8s ease-out 0.6s backwards;
+        }
+
+        .highlight {
+            color: var(--accent-red);
+            font-weight: 600;
+        }
+
+        .info-box {
+            background: var(--light-gray);
+            border-left: 5px solid var(--accent-red);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            animation: fadeIn 0.8s ease-out 0.8s backwards;
+        }
+
+        .info-box h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .info-box p {
+            margin-bottom: 5px;
+            font-size: 1em;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .contact-details a {
+            color: var(--light-blue);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: var(--accent-red);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            animation: fadeIn 0.8s ease-out 1s backwards;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-red) 0%, #b01030 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 51, 102, 0.3);
+        }
+
+        .social-links {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid var(--light-gray);
+        }
+
+        .social-links p {
+            font-size: 0.95em;
+            color: var(--secondary-blue);
+            margin-bottom: 15px;
+        }
+
+        .countdown {
+            margin-top: 20px;
+            color: var(--secondary-blue);
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-container">
+        <img src="imagenes/logo.png" alt="DyM Cyber Logo" class="logo">
+        
+        <div class="check-icon"></div>
+        
+        <h1>¡Mensaje Enviado!</h1>
+        
+        <p>Gracias por contactarnos. Tu mensaje ha sido recibido exitosamente.</p>
+        
+        <p>Nuestro equipo revisará tu solicitud y te responderá lo antes posible, generalmente <span class="highlight">dentro de las próximas 24-48 horas hábiles</span>.</p>
+
+        <div class="info-box">
+            <h3>Contacto Directo</h3>
+            <p>Si necesitas una respuesta inmediata, puedes comunicarte directamente con:</p>
+            <div class="contact-details">
+                <p><strong>Dismilka Camilo Liriano</strong> - Gerente General</p>
+                <p><a href="tel:+56953792691">+56 9 5379 2691</a></p>
+                <p><a href="/cdn-cgi/l/email-protection#781c110b1511141319381c01151b011a1d0a561b1715"><span class="__cf_email__" data-cfemail="26424f554b4f4a4d4766425f4b455f4443540845494b">[email&#160;protected]</span></a></p>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <a href="index.html" class="btn btn-primary">Volver al Inicio</a>
+            <a href="index.html#servicios" class="btn btn-secondary">Ver Servicios</a>
+        </div>
+
+        <div class="social-links">
+            <p>"Si crees, veras la gloria de Dios"</p>
+        </div>
+
+        <div class="countdown">
+            <p>Redirigiendo automáticamente en <span id="timer">10</span> segundos...</p>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Contador regresivo para redirección automática
+        let timeLeft = 20;
+        const timerElement = document.getElementById('timer');
+        
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+
+        // Animación del check
+        setTimeout(() => {
+            const checkIcon = document.querySelector('.check-icon');
+            checkIcon.style.animation = 'pulse 2s infinite';
+        }, 1000);
+
+        // animación de pulso
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"6671e86a06c64c9e96d7a6237db3ef85","r":1}' crossorigin="anonymous"></script>
+</body>
+</html>
