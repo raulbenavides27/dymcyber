@@ -110,4 +110,36 @@ document.addEventListener('DOMContentLoaded', function() {
     if (langBtn) {
         langBtn.addEventListener('click', switchLanguage);
     }
+
+    /*==========================================
+ANIMACIONES SCROLL
+==========================================*/
+
+const revealElements = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add('active');
+
+        }else{
+
+            entry.target.classList.remove('active');
+
+        }
+
+    });
+
+},{
+    threshold:.15
+});
+
+revealElements.forEach(element=>{
+
+    observer.observe(element);
+
+});
 });

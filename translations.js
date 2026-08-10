@@ -106,7 +106,18 @@ const translations = {
         
         // Footer
         footerText: "DyM Cyber - Tecnología y Ciberseguridad",
-        footerQuote: '"Si crees, veras la gloria de Dios"'
+        footerQuote: '"Si crees, veras la gloria de Dios"',
+        // Gerencia
+        managementTag: "LIDERAZGO EMPRESARIAL",
+        managementName: "Dismilka Camilo Liriano",
+        managementPosition: "Gerente General | CEO",
+        managementDescription:
+        "Profesional en gestión empresarial, ciberseguridad, comunicaciones y liderazgo organizacional. Participa activamente en iniciativas que impulsan la transformación digital y el fortalecimiento del liderazgo femenino en la industria.",
+        managementSkill1: "Gestión Empresarial",
+        managementSkill2: "Ciberseguridad",
+        managementSkill3: "Transformación Digital",
+        managementSkill4: "Liderazgo Organizacional",
+        managementLinkedin: "Perfil de LinkedIn",
     },
     en: {
         // Header
@@ -216,6 +227,17 @@ const translations = {
         
         // Footer
         footerText: "DyM Cyber - Technology and Cybersecurity",
-        footerQuote: '"If you believe, you will see the glory of God"'
+        footerQuote: '"If you believe, you will see the glory of God"',
+        // Gerencia
+        managementTag: "BUSINESS LEADERSHIP",
+        managementName: "Dismilka Camilo Liriano",
+        managementPosition: "Chief Executive Officer | CEO",
+        managementDescription:
+        "Professional in business management, cybersecurity, communications and organizational leadership. Actively involved in initiatives that drive digital transformation and strengthen women's leadership in the industry.",
+        managementSkill1: "Business Management",
+        managementSkill2: "Cybersecurity",
+        managementSkill3: "Digital Transformation",
+        managementSkill4: "Organizational Leadership",
+        managementLinkedin: "LinkedIn Profile",
     }
 };
