@@ -1040,15 +1040,10 @@ GERENCIA
 
 }
 .management-layout{
-
     display:grid;
-
     grid-template-columns:380px 1fr;
-
     gap:70px;
-
     align-items:center;
-
 }
 .management-photo{
     display:flex;
@@ -1056,19 +1051,14 @@ GERENCIA
     align-items:center;
     border-radius:22px;
     overflow:hidden;
+    margin-top:10px;
 }
 .management-photo img{
-
     width:100%;
-
     max-width:380px;
-
     height:auto;
     object-position:center 8%;
-    border-radius:22px;
-
     box-shadow:0 18px 45px rgba(0,0,0,.18);
-
 }
 .management-content{
 
@@ -1078,7 +1068,6 @@ GERENCIA
 
     flex-direction:column;
 
-    justify-content:center;
 
 }
 .management-tag{
@@ -1202,27 +1191,56 @@ GERENCIA
 /*=========================
 TABLET
 =========================*/
+/*=====================================================*
+* TABLET / VISTA INTERMEDIA - GERENCIA
+*=====================================================*/
 
-@media(max-width:992px){
+@media (max-width:1100px) and (min-width:769px){
+
+    .management-card{
+        padding:40px;
+    }
 
     .management-layout{
-
-        grid-template-columns:260px 1fr;
-
+        grid-template-columns:minmax(280px, 320px) minmax(0, 1fr);
         gap:40px;
+    }
 
+    .management-photo{
+        width:100%;
+    }
+
+    .management-photo img{
+        width:100%;
+        max-width:320px;
+    }
+
+    .management-content{
+        width:100%;
+        max-width:none;
+        min-width:0;
     }
 
     .management-content h2{
-
-        font-size:2.4rem;
-
+        font-size:2.8rem;
     }
 
     .management-content h3{
+        font-size:1.7rem;
+    }
 
-        font-size:1.5rem;
+    .management-content p{
+        font-size:1rem;
+        line-height:1.75;
+    }
 
+    .management-list{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:16px;
+    }
+
+    .management-links{
+        gap:20px;
     }
 
 }
@@ -1248,56 +1266,32 @@ MÓVIL
     .logo-main{
         width:140px;
     }
-
     /* BOTÓN IDIOMA */
-
     .language-selector{
         position:absolute;
         top:15px;
         right:15px;
         z-index:300;
     }
-
     .lang-btn{
-
         padding:8px 14px;
-
         border-radius:20px;
-
         font-size:.75rem;
-
     }
-
     .flag-icon{
-
         font-size:15px;
-
     }
-
     /* NAV */
-
     nav{
-
         padding:0;
-
     }
-
     nav .container{
-
-        min-height:60px;
-
         display:flex;
-
         align-items:center;
-
     }
-
     .hamburger{
-
         display:flex;
-
     }
-
     nav ul{
         position:fixed;
         top:0;
@@ -1328,8 +1322,6 @@ MÓVIL
         font-size:1rem;
 
     }
-
-
     #hero{
         min-height:auto;
         background-position:78% center;
@@ -1358,141 +1350,92 @@ MÓVIL
         width:100%;
         text-align:center;
     }
-
-
-
 .logo-area{
     justify-content:center;
 }
 .header-text h1{
     font-size:2rem;
 }
-
 .header-text p{
     font-size:1rem;
 }
-
     .ot-timeline {
         grid-template-columns: 1fr;
     }
-
     h2 {
         font-size: 1.8em;
     }
-
     .carousel-slide img {
         height: 300px;
     }
-
     .carousel-btn {
         padding: 10px 15px;
         font-size: 18px;
     }
-
     .carousel-btn.prev {
         left: 10px;
     }
-
     .carousel-btn.next {
         right: 10px;
     }
-
     .language-selector {
         top: 15px;
         right: 15px;
     }
-    
     .lang-btn {
         padding: 10px 18px;
         font-size: 13px;
     }
-    
     .flag-icon {
         font-size: 18px;
     }
-
     #gerencia{
-
         padding:70px 0;
-
     }
-  .management-card{
+    .management-card{
     padding:40px 22px 30px;
     border-radius:28px;
     overflow:hidden;
-}
-
-.management-layout{
-
-    grid-template-columns:1fr;
-
-    gap:25px;
-
-    justify-items:center;
-
-}
-
-.management-photo{
+    }
+    .management-layout{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    }
+    .management-photo{
     display:flex;
     justify-content:center;
     margin:0 auto 12px;
     width:auto;
     border-radius:22px;
     overflow:hidden;
-    padding-top:8px;
 }
-
 .management-photo img{
-
     width:100%;
-
     max-width:300px;
-
     height:auto;
-
     aspect-ratio:auto;
-
     object-fit:contain;
-
-
    box-shadow:none;
      display:block;
-
 }
-
 .management-content{
-
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     justify-content:flex-start;
 }
-
     .management-tag{
-
         display:block;
-
         text-align:center;
-
         letter-spacing:.20em;
-
     }
-
     .management-content h2{
-
         font-size:2.3rem;
-
         line-height:1.2;
-
     }
-
     .management-content h3{
-
         font-size:1.5rem;
-
     }
 .management-content p{
     max-width:100%;
@@ -1572,26 +1515,23 @@ MÓVIL
 ==========================================*/
 
 .service-card,
-.partner-card,
-.management-photo {
+.partner-card
+{
 
     overflow: hidden;
 
 }
 
 .service-card img,
-.partner-card img,
-.management-photo img{
-
+.partner-card img
+{
     transition:
         transform .6s ease,
         filter .6s ease;
-
 }
-
 .service-card:hover img,
-.partner-card:hover img,
-.management-card:hover .management-photo img{
+.partner-card:hover img
+{
 
     transform:scale(1.05);
 
