@@ -269,137 +269,7 @@ HEADER TABLET
     }
 
 }
-@media (max-width:768px){
 
-    /* HEADER */
-
-    header{
-
-        padding:15px 0;
-
-    }
-
-    .header-content{
-
-        display:flex;
-
-        justify-content:center;
-
-        align-items:center;
-
-    }
-
-    .header-text{
-
-        display:none;
-
-    }
-
-    .logo-main{
-
-        width:140px;
-
-    }
-
-    /* BOTÓN IDIOMA */
-
-    .language-selector{
-
-        position:absolute;
-
-        top:15px;
-
-        right:15px;
-
-        z-index:300;
-
-    }
-
-    .lang-btn{
-
-        padding:8px 14px;
-
-        border-radius:20px;
-
-        font-size:.75rem;
-
-    }
-
-    .flag-icon{
-
-        font-size:15px;
-
-    }
-
-    /* NAV */
-
-    nav{
-
-        padding:0;
-
-    }
-
-    nav .container{
-
-        min-height:60px;
-
-        display:flex;
-
-        align-items:center;
-
-    }
-
-    .hamburger{
-
-        display:flex;
-
-    }
-
-    nav ul{
-
-        position:fixed;
-
-        top:0;
-
-        left:-100%;
-
-        width:280px;
-
-        height:100vh;
-
-        background:#082149;
-
-        flex-direction:column;
-
-        justify-content:flex-start;
-
-        align-items:flex-start;
-
-        padding:90px 30px 30px;
-
-        gap:0;
-
-        transition:.35s;
-
-        box-shadow:8px 0 20px rgba(0,0,0,.35);
-
-    }
-    nav ul.active{
-        left:0;
-    }
-    nav li{
-        width:100%;
-        border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    nav a{
-        display:block;
-        width:100%;
-        padding:18px 0;
-        font-size:1rem;
-
-    }
-
-}
 
 /*=====================================================
  HERO
@@ -522,17 +392,48 @@ BOTONES HERO PREMIUM
 
     box-shadow:0 15px 35px rgba(220,20,60,.28);
 
-    transition:all .35s ease;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        filter .35s ease;
 
 }
+
+/* AGREGAR ESTE BLOQUE */
 
 .btn-primary:hover{
 
     transform:translateY(-4px);
 
-    box-shadow:0 25px 45px rgba(220,20,60,.40);
-
     filter:brightness(1.05);
+
+    box-shadow:
+        0 0 18px rgba(220,20,60,.40),
+        0 0 40px rgba(220,20,60,.22),
+        0 18px 38px rgba(220,20,60,.30);
+
+}
+
+.btn-primary:active{
+
+    transform:translateY(0);
+
+}
+
+.btn-secondary:hover{
+
+    transform:translateY(-4px);
+
+    background:rgba(255,255,255,.12);
+
+    color:#fff;
+
+    border-color:var(--accent-green);
+
+    box-shadow:
+        0 0 12px rgba(34,160,107,.45),
+        0 0 28px rgba(34,160,107,.30),
+        0 15px 35px rgba(34,160,107,.20);
 
 }
 
@@ -566,16 +467,6 @@ BOTONES HERO PREMIUM
 
 }
 
-.btn-secondary:hover{
-
-    transform:translateY(-4px);
-
-    background:rgba(255,255,255,.12);
-
-    border-color:rgba(255,255,255,.45);
-
-}
-
 /*============================
  HERO RESPONSIVE
 ============================*/
@@ -600,38 +491,10 @@ BOTONES HERO PREMIUM
         font-size:2.8rem;
     }
 }
-@media (max-width:768px){
 
-    #hero{
-        min-height:auto;
-        background-position:78% center;
-    }
-    .hero-overlay{
-        padding:70px 0;
-    }
-    .hero-content{
-        max-width:100%;
-        text-align:center;
-    }
-    .hero-tag{
-        margin:0 auto 20px;
-    }
-    .hero-content h1{
-        font-size:2rem;
-    }
-    .hero-content p{
-        font-size:1rem;
-    }
-    .hero-buttons{
-        flex-direction:column;
-    }
-    .btn-primary,
-    .btn-secondary{
-        width:100%;
-        text-align:center;
-    }
 
-}
+
+
 /* Carrusel de imágenes */
 .carousel-container {
     position: relative;
@@ -714,8 +577,9 @@ BOTONES HERO PREMIUM
 }
 
 /* Sections */
-section {
-    padding: 60px 0;
+section{
+    padding:110px 0;
+    position:relative;
 }
 
 section:nth-child(even) {
@@ -794,23 +658,31 @@ h3 {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
+    
 }
 
-.service-card {
-    background: var(--white);
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+.service-card{
+    background:#fff;
+    border-radius:22px;
+    border:1px solid rgba(0,51,102,.08);
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.06);
+    overflow:hidden;
+    transition:
+        border-color .35s ease,
+        box-shadow .35s ease;
+        padding:38px;
 }
 
 section:nth-child(even) .service-card {
     background: var(--white);
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+.service-card:hover{
+    border-color:#1A5490;
+    box-shadow:
+        0 24px 48px rgba(0,0,0,.10);
+
 }
 
 .service-card h4 {
@@ -818,6 +690,7 @@ section:nth-child(even) .service-card {
     margin-bottom: 15px;
     font-size: 1.3em;
 }
+
 
 .service-card ul {
     list-style: none;
@@ -1096,86 +969,7 @@ footer p {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
- 
 
-
-.logo-area{
-    justify-content:center;
-}
-
-.logo-main{
-    width:160px;
-}
-
-.header-text h1{
-    font-size:2rem;
-}
-
-.header-text p{
-    font-size:1rem;
-}
-
-
-    .hamburger {
-        display: flex;
-    }
-
-    nav ul {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: var(--primary-blue);
-        width: 100%;
-        text-align: center;
-        transition: left 0.3s;
-        box-shadow: 0 10px 27px rgba(0,0,0,0.2);
-        padding: 20px 0;
-        gap: 0;
-    }
-
-    nav ul.active {
-        left: 0;
-    }
-
-    nav li {
-        margin: 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    nav a {
-        display: block;
-        padding: 15px;
-        font-size: 1.1em;
-        transition: color .3s ease;
-    }
-
-    .ot-timeline {
-        grid-template-columns: 1fr;
-    }
-
-    h2 {
-        font-size: 1.8em;
-    }
-
-    .carousel-slide img {
-        height: 300px;
-    }
-
-    .carousel-btn {
-        padding: 10px 15px;
-        font-size: 18px;
-    }
-
-    .carousel-btn.prev {
-        left: 10px;
-    }
-
-    .carousel-btn.next {
-        right: 10px;
-    }
-}
 
 
 /* ============================================
@@ -1222,58 +1016,47 @@ footer p {
     line-height: 1;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .language-selector {
-        top: 15px;
-        right: 15px;
-    }
-    
-    .lang-btn {
-        padding: 10px 18px;
-        font-size: 13px;
-    }
-    
-    .flag-icon {
-        font-size: 18px;
-    }
-}
+
 /*=====================================================
 GERENCIA
 =====================================================*/
 
 #gerencia{
-
-    padding:120px 0;
+    padding:120px 0 140px;
+    background:#f7fafc;
+}
+.management-card{
 
     background:#fff;
 
-}
+    border-radius:28px;
 
+    padding:55px;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+
+    overflow:hidden;
+    padding-bottom:40px;
+
+}
 .management-layout{
 
     display:grid;
 
-    grid-template-columns:400px 1fr;
+    grid-template-columns:380px 1fr;
 
     gap:70px;
 
     align-items:center;
 
-    min-height:560px;
-
 }
-
 .management-photo{
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
+    border-radius:22px;
+    overflow:hidden;
 }
-
 .management-photo img{
 
     width:100%;
@@ -1287,7 +1070,6 @@ GERENCIA
     box-shadow:0 18px 45px rgba(0,0,0,.18);
 
 }
-
 .management-content{
 
     max-width:760px;
@@ -1299,8 +1081,6 @@ GERENCIA
     justify-content:center;
 
 }
-
-
 .management-tag{
 
     display:inline-block;
@@ -1318,7 +1098,6 @@ GERENCIA
     text-transform:uppercase;
 
 }
-
 .management-content h2{
 
     margin:0;
@@ -1330,13 +1109,11 @@ GERENCIA
     color:#163b74;
 
 }
-
 .management-content h2::after{
 
     display:none;
 
 }
-
 .management-content h3{
 
     margin:18px 0 28px;
@@ -1348,7 +1125,6 @@ GERENCIA
     font-weight:600;
 
 }
-
 .management-content p{
 
     font-size:1.12rem;
@@ -1360,7 +1136,6 @@ GERENCIA
     margin-bottom:28px;
 
 }
-
 .management-list{
 
     display:grid;
@@ -1376,7 +1151,6 @@ GERENCIA
     margin:0 0 35px;
 
 }
-
 .management-list li{
 
     display:flex;
@@ -1388,7 +1162,6 @@ GERENCIA
     font-weight:500;
 
 }
-
 .management-list li::before{
 
     content:"✓";
@@ -1400,7 +1173,6 @@ GERENCIA
     margin-right:12px;
 
 }
-
 .management-links{
 
     display:flex;
@@ -1410,7 +1182,6 @@ GERENCIA
     flex-wrap:wrap;
 
 }
-
 .management-links a{
 
     color:#123c74;
@@ -1422,7 +1193,6 @@ GERENCIA
     transition:.3s;
 
 }
-
 .management-links a:hover{
 
     color:#d7263d;
@@ -1461,41 +1231,222 @@ TABLET
 MÓVIL
 =========================*/
 
-@media(max-width:768px){
+/* Responsive adjustments */
+    @media (max-width:768px){
+    /* HEADER */
+    header{
+        padding:15px 0;
+    }
+    .header-content{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .header-text{
+        display:none;
+    }
+    .logo-main{
+        width:140px;
+    }
+
+    /* BOTÓN IDIOMA */
+
+    .language-selector{
+        position:absolute;
+        top:15px;
+        right:15px;
+        z-index:300;
+    }
+
+    .lang-btn{
+
+        padding:8px 14px;
+
+        border-radius:20px;
+
+        font-size:.75rem;
+
+    }
+
+    .flag-icon{
+
+        font-size:15px;
+
+    }
+
+    /* NAV */
+
+    nav{
+
+        padding:0;
+
+    }
+
+    nav .container{
+
+        min-height:60px;
+
+        display:flex;
+
+        align-items:center;
+
+    }
+
+    .hamburger{
+
+        display:flex;
+
+    }
+
+    nav ul{
+        position:fixed;
+        top:0;
+        left:-100%;
+        width:280px;
+        height:100vh;
+        background:#082149;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:flex-start;
+        padding:90px 30px 30px;
+        gap:0;
+        transition:.35s;
+        box-shadow:8px 0 20px rgba(0,0,0,.35);
+
+    }
+    nav ul.active{
+        left:0;
+    }
+    nav li{
+        width:100%;
+        border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    nav a{
+        display:block;
+        width:100%;
+        padding:18px 0;
+        font-size:1rem;
+
+    }
+
+
+    #hero{
+        min-height:auto;
+        background-position:78% center;
+    }
+    .hero-overlay{
+        padding:70px 0;
+    }
+    .hero-content{
+        max-width:100%;
+        text-align:center;
+    }
+    .hero-tag{
+        margin:0 auto 20px;
+    }
+    .hero-content h1{
+        font-size:2rem;
+    }
+    .hero-content p{
+        font-size:1rem;
+    }
+    .hero-buttons{
+        flex-direction:column;
+    }
+    .btn-primary,
+    .btn-secondary{
+        width:100%;
+        text-align:center;
+    }
+
+
+
+.logo-area{
+    justify-content:center;
+}
+.header-text h1{
+    font-size:2rem;
+}
+
+.header-text p{
+    font-size:1rem;
+}
+
+    .ot-timeline {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .carousel-slide img {
+        height: 300px;
+    }
+
+    .carousel-btn {
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+
+    .carousel-btn.prev {
+        left: 10px;
+    }
+
+    .carousel-btn.next {
+        right: 10px;
+    }
+
+    .language-selector {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .lang-btn {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+    
+    .flag-icon {
+        font-size: 18px;
+    }
 
     #gerencia{
 
         padding:70px 0;
 
     }
-
-.management-layout{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    width:100%;
-    max-width:100%;
-
-    gap:32px;
-    margin:0 auto;
-    padding:0 20px;
+  .management-card{
+    padding:40px 22px 30px;
+    border-radius:28px;
+    overflow:hidden;
 }
 
-    .management-photo{
+.management-layout{
 
-        width:100%;
+    grid-template-columns:1fr;
 
-        margin:0;
+    gap:25px;
 
-    }
+    justify-items:center;
 
- .management-photo img{
+}
+
+.management-photo{
+    display:flex;
+    justify-content:center;
+    margin:0 auto 12px;
+    width:auto;
+    border-radius:22px;
+    overflow:hidden;
+    padding-top:8px;
+}
+
+.management-photo img{
 
     width:100%;
 
-    max-width:280px;
+    max-width:300px;
 
     height:auto;
 
@@ -1503,20 +1454,23 @@ MÓVIL
 
     object-fit:contain;
 
-    border-radius:22px;
 
-    box-shadow:0 18px 45px rgba(0,0,0,.18);
+   box-shadow:none;
+     display:block;
 
 }
+
 .management-content{
-    width:100%;
-    max-width:100%;
-    text-align:center;
 
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
+
+    justify-content:flex-start;
 }
+
     .management-tag{
 
         display:block;
@@ -1541,7 +1495,7 @@ MÓVIL
 
     }
 .management-content p{
-    max-width:95%;
+    max-width:100%;
     margin:0 auto 30px;
     line-height:1.8;
 }
@@ -1557,7 +1511,7 @@ MÓVIL
 
     width:100%;
 
-    max-width:260px;
+    max-width:320px;
 
     margin:30px auto;
 
@@ -1586,8 +1540,8 @@ MÓVIL
 .card,
 .service-card,
 .partner-card,
-.contact-card,
-.management-layout {
+.contact-card
+ {
 
     transition:
         transform .35s ease,
@@ -1605,7 +1559,7 @@ MÓVIL
 .service-card:hover,
 .partner-card:hover,
 .contact-card:hover,
-.management-layout:hover{
+.management-card:hover{
 
     transform:translateY(-8px);
 
@@ -1637,12 +1591,13 @@ MÓVIL
 
 .service-card:hover img,
 .partner-card:hover img,
-.management-layout:hover .management-photo img{
+.management-card:hover .management-photo img{
 
     transform:scale(1.05);
 
     filter:brightness(1.05);
 
+}
 }
 /*==========================================
 ANIMACIONES DE SCROLL
@@ -1701,6 +1656,87 @@ ANIMACIONES DE SCROLL
     transform:none;
 
 }
+/*==========================================
+=      ENCABEZADOS CORPORATIVOS
+==========================================*/
+
+.section-header{
+
+    max-width:760px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+.section-header::before{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:5px;
+
+    margin:0 auto 24px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        var(--accent-red),
+        var(--accent-green)
+    );
+
+}
+
+.section-header h2{
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    font-weight:800;
+
+    color:var(--primary-blue);
+
+    margin-bottom:18px;
+
+    letter-spacing:-.03em;
+
+}
+
+.section-header p{
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    color:#666;
+
+    max-width:680px;
+
+    margin:auto;
+
+}
+/*==========================================
+=      FONDOS CORPORATIVOS
+==========================================*/
+
+#servicios,
+#gerencia{
+
+    background:#F7FAFC;
+
+}
+
+#empresa,
+#servicios-profesionales,
+#partners,
+#contacto{
+
+    background:#FFFFFF;
+
 }
 
   
