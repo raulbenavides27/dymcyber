@@ -4,6 +4,9 @@ const translations = {
         headerTitle: "Tecnología y Ciberseguridad",
         headerQuote: '"Si crees, veras la gloria de Dios"',
         // Hero
+        heroDescription: "Protegemos organizaciones mediante soluciones de infraestructura tecnológica, ciberseguridad y continuidad operacional para entornos TI y OT.",
+        heroButton1: "Solicitar Asesoría",
+        heroButton2: "Conocer Servicios",
         heroTitle: "Soluciones en Tecnología, Ciberseguridad e Infraestructura OT",
         heroTag: "Tecnología y Ciberseguridad",
         heroText2: "Participamos en proyectos nacionales e internacionales, desarrollando soluciones seguras, modernas y adaptadas a la industria.",
@@ -124,6 +127,9 @@ const translations = {
         headerTitle: "Technology and Cybersecurity",
         headerQuote: '"If you believe, you will see the glory of God"',
         // Hero
+        heroDescription: "We protect organizations through technology infrastructure, cybersecurity and operational continuity solutions for IT and OT environments.",
+        heroButton1: "Request Consulting",
+        heroButton2: "Explore Services",
         heroTitle: "Technology, Cybersecurity and OT Infrastructure Solutions",
         heroTag: "Technology and Cybersecurity",
         heroText2: "We participate in national and international projects, developing secure, modern and industry-focused solutions.",
